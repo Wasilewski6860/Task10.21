@@ -154,6 +154,7 @@ public class FrameMain extends  JFrame{
                         if (pc!=null) {
 
                             InputArgs.saving(path,pc) ;
+                            ps.close();
                         }else Errors.setText("Table is empty");
 
                     } catch (FileNotFoundException ex) {  // Сообщение об ошибке
