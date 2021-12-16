@@ -3,13 +3,14 @@ package ru.vsu.baryshev;
 import java.util.List;
 
 public class logic {
+
     public static PCTablet processingForTwoPCT(PCTablet pc1, PCTablet pc2,int cash){
         PCTablet pc = null;
-        if (pc1.storage>pc2.storage && pc1.price <=cash){
+        if (pc1.storage>pc2.storage && pc1.price <=cash && pc1.rating> pc2.rating){
             pc = pc1;
-        }else if (pc2.storage>pc1.storage && pc2.price <=cash){
+        }else if (pc2.storage>pc1.storage && pc2.price <=cash && pc1.rating< pc2.rating){
             pc = pc2;
-        }else  if(pc1.storage== pc2.storage && pc1.price <= cash && pc2.price <= cash){
+        }else  if(pc1.storage== pc2.storage && pc1.price <= cash && pc2.price <= cash &&  pc1.rating ==  pc2.rating){
             if (pc1.nameOfModel.equals("Asus") || pc1.nameOfModel.equals("Samsung")) pc=pc1;
             if (pc2.nameOfModel.equals("Asus") || pc2.nameOfModel.equals("Samsung")) pc = pc2;
         }
